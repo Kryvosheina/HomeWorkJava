@@ -29,8 +29,15 @@ public class Main {
         }
         int max = nums[0];
         int min = nums[0];
+        int counter = 0;
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++)
+        {
+            if (max == nums[i])
+            {
+                counter++;
+            };
+
             if (max < nums[i]) {
                 max = nums[i];
             }
@@ -40,7 +47,7 @@ public class Main {
         }
         System.out.println("Максимальное число в массиве : " + max);
         System.out.println("Минимальное число в массиве : " + min);
-
+        System.out.println("Количество максимальных чисел : " + counter);
 
         // Даны имена 2х человек (тип String).
         // Если имена равны, то вывести сообщение о том, что люди являются тезками.
@@ -98,7 +105,8 @@ public class Main {
 
         //При помощи цикла for вывести на экран нечетные числа от 1 до 99.
         int[] numeric = new int[100];
-        for (int i = 0; i < numeric.length; i++) {
+        for (int i = 0; i < numeric.length; i++)
+        {
             numeric[i] = i;
         }
         int odd = 0;
@@ -109,5 +117,27 @@ public class Main {
                System.out.print(i + " ");
             }
         }
+
+
+        //Дано число n при помощи цикла for посчитать факториал n!
+        System.out.println("  ");
+        int res = 1;
+        int n = 0;
+        isValid = false;
+        System.out.println("Введите число, факториал которого необходимо вычислить :");
+        if (inI.hasNextInt())
+        {
+            n = inI.nextInt();
+            isValid = true;
+        } else {
+            System.out.println("Введите только целое число!");
+            inI.next();
+        }
+
+        for (int i = 1; i <= n; i++)
+        {
+            res = res * i;
+        }
+        System.out.println("Факториал числа " + n +" = "+ res);
     }
 }
