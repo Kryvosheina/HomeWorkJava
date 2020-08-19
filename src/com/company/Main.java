@@ -13,7 +13,7 @@ public class Main {
         int nums[];
         nums = new int[5];
         boolean isValid;
-        for (int i = 0; i < 5; i++) {
+  /*      for (int i = 0; i < 5; i++) {
             isValid = false;
 
             while (!isValid) {
@@ -354,10 +354,10 @@ public class Main {
             i = i + 1;
         } while (i <= n);
         System.out.println("Факториал числа " + n +" = "+ res);
-
+*/
         //Даны переменные x и n вычислить x^n.
         double x, y, result;
-        System.out.println("6. Даны переменные x и n вычислить x^n.");
+        System.out.println("6.1. Даны переменные x и n вычислить x^n. Math.pow");
         System.out.println("    ");
         System.out.println("Введите переменную х : ");
         x = inI.nextDouble();
@@ -365,7 +365,23 @@ public class Main {
         y = inI.nextDouble();
         result = Math.pow(x,y);
         System.out.println("Значение " + x + " в степени " + y + " = " + result);
-    }
+
+        //Даны переменные x и n вычислить x^n.
+
+        System.out.println("6.2. Даны переменные x и n вычислить x^n. Цикл for ");
+        System.out.println("    ");
+        System.out.println("Введите переменную х : ");
+        x = inI.nextDouble();
+        System.out.println("Введите переменную y : ");
+        y = inI.nextDouble();
+
+        result = 1;
+        for (int k=1; k <= y; k++)
+        {
+            result = result * x;
+        }
+        System.out.println("Значение " + x + " в степени " + y + " = " + result);
+    } // main
 
 
 }
