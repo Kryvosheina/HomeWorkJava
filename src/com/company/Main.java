@@ -2,7 +2,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-    public static  int counter2;
+
 
     public static void main(String[] args) {
 
@@ -55,7 +55,7 @@ public class Main {
         System.out.println("№1.2. Даны 5 чисел (тип int). Вывести вначале наименьшее, а затем наибольшее из данных чисел. решение через if-else");
        System.out.println("Введите 5 целых чисел");
 
-       int a=0,b=0,c=0,d = 0,e=0, min2=0, max2=0;
+       int a=0,b=0,c=0,d = 0,e=0, min2=0, max2=0; int counter2 = 0;
        isValid = false;
 
        while (!isValid) {
@@ -112,42 +112,76 @@ public class Main {
                 inI.next();
             }
         }
+        int temp_max1 = 0; int temp_max2 = 0; int temp_min1 = 0; int temp_min2 = 0;
+        if (a > b)
+        {
+            temp_max1 = a;
+            temp_min1 = b;
+        }
+        if (b > a)
+            {
+                temp_max1 = b;
+                temp_min1 = a;
+            }
+        if (a==b)
+                {
+                    temp_max1 = a;
+                    temp_min1 = b;
+                    counter2 = counter2 + 2;
+                }
+        if (c > d)
+        {
+            temp_max2 = c;
+            temp_min2 = d;
+        }
+        if (d > c)
+        {
+            temp_max2 = d;
+            temp_min2 = c;
+        }
+        if (c==d)
+        {
+            temp_max2 = c;
+            temp_min2 = d;
+            counter2 = counter2 + 2;
+        }
+        if (temp_max1 > temp_max2)
+        {
+            max2 = temp_max1;
+        }
+        if (temp_max2 > temp_max1)
+        {
+            max2 = temp_max2;
+        }
+        if (temp_max1 == temp_max2)
+        {
+            max2 = temp_max1;
+            counter2 = counter2 + 2;
+        }
+        if (temp_min1 > temp_min2)
+        {
+            min2 = temp_min2;
+        }
+        if (temp_min2 > temp_min1)
+        {
+            min2 = temp_min1;
+        } else
+            {
+                min2 = temp_min1;
+            }
 
-        if (a > b && a > c && a > d && a > e)
-        {
-            max2 = a;
-        } else if (b > a && b > c && b > d && b > e)
-        {
-            max2 = b;
-        } else if (c > a && c > b && c > d && c > e)
-        {
-            max2 = c;
-        } else if (d > a && d > b && d > c && d > e)
-        {
-            max2 = d;
-        } else if (e > a && e > b && e > c && e > d)
+        if (e > max2)
         {
             max2 = e;
+        } else if (max2 == e)
+        {
+            counter2 = counter2 + 1;
         }
-        counter2 = max(max2,a);
 
-        if (a < b && a < c && a < d && a < e)
-        {
-            min2 = a;
-        } else if (b < a && b < c && b < d && b < e)
-        {
-            min2 = b;
-        } else if (c < a && c < b && c < d && c < e)
-        {
-            min2 = c;
-        } else if (d < a && d < b && d < c && d < e)
-        {
-            min2 = d;
-        } else if (e < a && e < b && e < c && e < d)
+        if (min2 > e)
         {
             min2 = e;
         }
-
 
        System.out.println("Максимальное число в массиве : " + max2);
        System.out.println("Минимальное число в массиве : " + min2);
@@ -281,23 +315,5 @@ public class Main {
         System.out.println("Факториал числа " + n +" = "+ res);
     }
 
-    public static int max(int first, int second)
-    {
 
-        if (first > second)
-        {
-            counter2 = counter2 + 1;
-            return counter2;
-        } else if (first == second)
-        {
-            counter2 = counter2 + 1;
-            return counter2;
-        } else if (first < second)
-        {
-            return second;
-        }
-            {
-                return counter2;
-            }
-    }
 }
