@@ -1,4 +1,5 @@
 package com.company;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +14,7 @@ public class Main {
         int nums[];
         nums = new int[5];
         boolean isValid;
-  /*      for (int i = 0; i < 5; i++) {
+   /*     for (int i = 0; i < 5; i++) {
             isValid = false;
 
             while (!isValid) {
@@ -354,7 +355,7 @@ public class Main {
             i = i + 1;
         } while (i <= n);
         System.out.println("Факториал числа " + n +" = "+ res);
-*/
+
         //Даны переменные x и n вычислить x^n.
         double x, y, result;
         System.out.println("6.1. Даны переменные x и n вычислить x^n. Math.pow");
@@ -381,6 +382,122 @@ public class Main {
             result = result * x;
         }
         System.out.println("Значение " + x + " в степени " + y + " = " + result);
+
+        // Вывести 10 первых чисел последовательности 0, -5,-10,-15...
+        System.out.println("Вывести 10 первых чисел последовательности 0, -5,-10,-15...");
+        System.out.println("   ");
+        int r = 0;
+        for (int s = 1; s <= 10 ; s++)
+        {
+            System.out.print(r + ", ");
+            r = r - 5;
+        }
+
+        //Создайте массив, содержащий 10 первых нечетных чисел. Выведете элементы массива на консоль в одну строку, разделяя запятой.
+        System.out.println("Создайте массив, содержащий 10 первых нечетных чисел. Выведете элементы массива на консоль в одну строку, разделяя запятой.");
+        System.out.println("   ");
+        int[] mas_num = new int[10];
+
+        for (int i = 0; i < mas_num.length; i++)
+        {
+           mas_num[i] = 2*i + 1;
+           System.out.print(mas_num[i] + ", ");
+        }
+*/
+       //Дан массив размерности N, найти наименьший элемент массива и вывести на консоль (если наименьших элементов несколько — вывести их все).
+        System.out.println("Дан массив размерности N, найти наименьший элемент массива и вывести на консоль (если наименьших элементов несколько — вывести их все) + найти наибольший элемент.");
+        System.out.println("Введите размерность массива : ");
+        int razm_mas = 1;
+        isValid = false;
+        Random generator = new Random();
+
+        if (inI.hasNextInt())
+        {
+            razm_mas = inI.nextInt();
+            isValid = true;
+        } else {
+            System.out.println("Введите только целое число!");
+            inI.next();
+        }
+        int[] mas_num2 = new int[razm_mas];
+        for (int q = 0; q < mas_num2.length; q++)
+        {
+           mas_num2[q] = generator.nextInt(100);
+           System.out.print(mas_num2[q] + ", ");
+        }
+        int min1 = mas_num2[0];
+        int max1 = mas_num2[0];
+        int index_min = 0;
+        int index_max = 0;
+        for (int w = 0; w < mas_num2.length; w++)
+        {
+            if (mas_num2[w] < min1)
+            {
+               min1 = mas_num2[w];
+               index_min = w;
+            }
+            if (mas_num2[w] > max1)
+            {
+                max1 = mas_num2[w];
+                index_max = w;
+            }
+        }
+        int counter = 0;
+        for (int w = 0; w < mas_num2.length; w++)
+        {
+            if (mas_num2[w]==min1)
+            {
+                counter = counter + 1;
+            }
+        }
+
+        System.out.println("   ");
+        System.out.println("Наименьшее число в массиве : " + min1);
+        System.out.println("Наибольшее число в массиве : " + max1);
+        System.out.println("Количество минимальных элементов в массиве : " + counter);
+
+        //Поменять наибольший и наименьший элементы массива местами. Пример: дан массив {4, -5, 0, 6, 8}.
+        // После замены будет выглядеть {4, 8, 0, 6, -5}.
+        System.out.println("Поменять наибольший и наименьший элементы массива местами. ");
+
+        mas_num2[index_min] = mas_num2[index_max];
+        mas_num2[index_max] = min1;
+        for (int i = 0; i < mas_num2.length; i++)
+        {
+            System.out.print(mas_num2[i] + ", ");
+        }
+        //Найти среднее арифметическое всех элементов массива.
+        System.out.println("  ");
+        System.out.println("Найти среднее арифметическое всех элементов массива.");
+        double sum = 0;
+        for (int i = 0; i < mas_num2.length; i++)
+        {
+            sum = sum + mas_num2[i];
+        }
+        sum = sum / mas_num2.length;
+        System.out.println("  ");
+        System.out.println("Среднее арифметическое всех элементов массива : " + sum);
+        System.out.println("Сортировка пузырьком :");
+        System.out.println(" ");
+
+        // i - номер прохода
+        for (int i = 0; i < mas_num2.length - 1; i++)
+        {
+            // внутренний цикл прохода
+            for (int j = mas_num2.length - 1; j > i; j--)
+            {
+                if (mas_num2[j - 1] > mas_num2[j])
+                {
+                    int tmp = mas_num2[j - 1];
+                    mas_num2[j - 1] = mas_num2[j];
+                    mas_num2[j] = tmp;
+                }
+            }
+        }
+        for (int i = 0; i < mas_num2.length; i++)
+        {
+            System.out.print(mas_num2[i] + ", ");
+        }
     } // main
 
 
