@@ -276,13 +276,13 @@ public class Main {
         }
 
          //При помощи цикла for вывести на экран нечетные числа от 1 до 99.
-        System.out.println("№4. При помощи цикла for вывести на экран нечетные числа от 1 до 99.");
+        System.out.println("№4.1. При помощи цикла for вывести на экран нечетные числа от 1 до 99.");
         int[] numeric = new int[100];
         for (int i = 0; i < numeric.length; i++)
         {
             numeric[i] = i;
         }
-        int odd = 0;
+
         for (int i = 1; i < numeric.length; i++)
         {
             if (i % 2 != 0)
@@ -290,10 +290,28 @@ public class Main {
                System.out.print(i + " ");
             }
         }
+        System.out.println("  ");
+        //При помощи цикла while вывести на экран нечетные числа от 1 до 99.
+        System.out.println("№4.2. При помощи цикла while вывести на экран нечетные числа от 1 до 99.");
+        int[] numeric2 = new int[100];
+        for (int i = 0; i < numeric2.length; i++)
+        {
+            numeric2[i] = i;
+        }
 
+        int j = 0;
+        do
+        {
+            if (j % 2 != 0)
+            {
+                System.out.print(j + " ");
+            }
+            j = j + 1;
+        } while ( j < numeric2.length);
+        System.out.println("  ");
 
         //Дано число n при помощи цикла for посчитать факториал n!
-        System.out.println("№5. Дано число n при помощи цикла for посчитать факториал n!");
+        System.out.println("№5.1. Дано число n при помощи цикла for посчитать факториал n!");
         System.out.println("  ");
         int res = 1;
         int n = 0;
@@ -313,6 +331,40 @@ public class Main {
             res = res * i;
         }
         System.out.println("Факториал числа " + n +" = "+ res);
+
+        //Дано число n при помощи цикла while посчитать факториал n!
+        System.out.println("№5.2. Дано число n при помощи цикла while посчитать факториал n!");
+        System.out.println("  ");
+        res = 1;
+        n = 0;
+        isValid = false;
+        System.out.println("Введите число, факториал которого необходимо вычислить :");
+        if (inI.hasNextInt())
+        {
+            n = inI.nextInt();
+            isValid = true;
+        } else {
+            System.out.println("Введите только целое число!");
+            inI.next();
+        }
+        int i = 1;
+        do
+        {
+            res = res * i;
+            i = i + 1;
+        } while (i <= n);
+        System.out.println("Факториал числа " + n +" = "+ res);
+
+        //Даны переменные x и n вычислить x^n.
+        double x, y, result;
+        System.out.println("6. Даны переменные x и n вычислить x^n.");
+        System.out.println("    ");
+        System.out.println("Введите переменную х : ");
+        x = inI.nextDouble();
+        System.out.println("Введите переменную y : ");
+        y = inI.nextDouble();
+        result = Math.pow(x,y);
+        System.out.println("Значение " + x + " в степени " + y + " = " + result);
     }
 
 
