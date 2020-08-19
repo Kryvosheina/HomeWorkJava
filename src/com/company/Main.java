@@ -13,7 +13,7 @@ public class Main {
         int nums[];
         nums = new int[5];
         boolean isValid;
-    /*    for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             isValid = false;
 
             while (!isValid) {
@@ -48,7 +48,7 @@ public class Main {
         }
         System.out.println("Максимальное число в массиве : " + max);
         System.out.println("Минимальное число в массиве : " + min);
-        System.out.println("Количество максимальных чисел : " + counter); */
+        System.out.println("Количество максимальных чисел : " + counter);
 
         //   Даны 5 чисел (тип int). Вывести вначале наименьшее, а затем наибольшее из данных чисел.
         //решение без массива и цикла
